@@ -10,7 +10,6 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
-
     <link
       rel="stylesheet"
       href="/node_modules/flowbite/dist/flowbite.min.css"
@@ -49,43 +48,101 @@
     }
   </style>
   <body class="bg-[#F5F5F5]">
-    <section class="section_header">
-      <div class="absolute top-1 w-full z-10">
+    <section class="section_header relative">
+      <div class="absolute top-0 w-full z-10">
         <img src="./images/awan_shape.svg" alt="Awan" class="w-full" />
       </div>
+
+      <!-- Navbar untuk laptop -->
       <nav
-        class="flex justify-between bg-white font-coiny mx-[90px] py-4 items-center relative z-20"
+        class="bg-white font-coiny px-4 py-4 relative z-20 hidden md:block md:px-[90px]"
       >
-        <div>
-          <a href=""><img src="./images/Logo.svg" alt="" class="w-32" /></a>
-        </div>
-        <div class="flex space-x-5">
-          <a href="" class="hover:text-merah transition-all">Home</a>
-          <a href="" class="hover:text-merah transition-all">About Us</a>
-          <a href="" class="hover:text-merah transition-all">Dog List</a>
-          <a href="" class="hover:text-merah transition-all">Blogs</a>
-          <a href="" class="hover:text-merah transition-all">Testimoni</a>
-        </div>
-        <div>
-          <button class="bg-merah text-white p-3 rounded-lg">
+        <div class="flex items-center justify-between">
+          <!-- Logo -->
+          <div>
+            <a href="">
+              <img src="./images/Logo.svg" alt="Logo" class="w-32" />
+            </a>
+          </div>
+
+          <!-- Navigation Links -->
+          <div class="flex items-center space-x-5">
+            <a href="" class="hover:text-merah transition-all">Home</a>
+            <a href="" class="hover:text-merah transition-all">Dog List</a>
+            <a href="" class="hover:text-merah transition-all">Blogs</a>
+          </div>
+
+          <button class="bg-merah text-white px-3 py-2 rounded-lg">
             <a href="#wa">Adopt Here</a>
           </button>
         </div>
       </nav>
+
+      <!-- Navbar untuk mobile dan tablet -->
+      <nav class="bg-white font-coiny px-4 py-4 relative z-20 md:hidden">
+        <div class="flex items-center justify-between">
+          <!-- Logo -->
+          <div>
+            <a href="">
+              <img src="./images/Logo.svg" alt="Logo" class="w-24" />
+            </a>
+          </div>
+
+          <!-- Hamburger Menu -->
+          <button
+            id="hamburger"
+            class="block md:hidden text-merah focus:outline-none"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Dropdown Menu -->
+        <div
+          id="mobile-menu"
+          class="hidden flex flex-col space-y-4 mt-4 text-center"
+        >
+          <a href="" class="hover:text-merah transition-all">Home</a>
+          <a href="" class="hover:text-merah transition-all">Dog List</a>
+          <a href="" class="hover:text-merah transition-all">Blogs</a>
+          <button class="bg-merah text-white px-3 py-2 rounded-lg">
+            <a href="#wa">Adopt Here</a>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Jumbotron -->
       <div class="relative font-coiny" id="jumbotron">
         <img src="./images/jumbotron.svg" alt="Jumbotron" class="w-full" />
-        <div class="absolute top-[10rem] right-10 text-white text-[45px]">
-          <h1 class="lolok">Hi Human.</h1>
+        <div
+          class="absolute top-[2rem] right-5 md:top-[10rem] md:right-10 text-white text-[24px] md:text-[45px]"
+        >
+          <h1>Hi Human.</h1>
           <p class="mt-4">You Need <span class="text-merah">Friends</span> ?</p>
         </div>
       </div>
     </section>
-    <section class="section_howadopt mx-[90px] py-4 mt-28">
+    <section class="section_howadopt md:mx-[90px] py-4 mt-28">
       <div class="">
-        <h2 class="text-3xl font-bold text-center font-coiny mb-6">
+        <h2 class="md:text-3xl text-2xl font-bold text-center font-coiny mb-6">
           How to Adopt
         </h2>
-        <div class="flex items-center justify-between relative">
+        <div
+          class="md:flex grid grid-cols-1 gap-8 items-center md:justify-between relative"
+        >
           <!-- Step 1 -->
           <div class="flex flex-col items-center text-center">
             <div class="flex items-center space-x-2">
@@ -104,7 +161,7 @@
 
           <!-- Garis Penghubung -->
           <div
-            class="absolute inset-y-[13px] w-[950px] -z-30 left-16 right-0 h-[2px] bg-merah"
+            class="absolute hidden md:block inset-y-[13px] w-[950px] -z-30 left-16 right-0 h-[2px] bg-merah"
           ></div>
 
           <!-- Step 2 -->
@@ -142,12 +199,16 @@
       </div>
     </section>
     <section class="section_aboutUs bg-[#EFF3EA]">
-      <div class="grid grid-cols-12 mx-[90px] pt-4 mt-28">
-        <div class="col-span-6">
-          <img src="./images/aboutUs.svg" class="w-96" alt="" />
+      <div class="grid md:grid-cols-2 grid-cols-1 md:mx-[90px] mx-8 pt-4 mt-28">
+        <div class="">
+          <img src="./images/aboutUs.svg" class="md:w-96" alt="" />
         </div>
-        <div class="col-span-6 my-auto">
-          <h1 class="text-merah font-coiny text-[36px]">About Us</h1>
+        <div class="my-auto">
+          <h1
+            class="text-merah font-coiny md:text-[36px] text-2xl text-left"
+          >
+            About Us
+          </h1>
           <p class="font-poppins text-justify">
             Selamat datang di Tailco, komunitas yang berdedikasi untuk menemukan
             rumah penuh cinta bagi teman-teman berbulu kita. Di Tailco, kami
@@ -186,7 +247,7 @@
               Adprian
             </h1>
             <div class="flex justify-between items-center mb-4">
-              <h1 class="text-sm font-medium">Golden Retriever</h1>
+              <h1 class="text-sm font-medium">Siberian Husky</h1>
               <div class="flex items-center space-x-2">
                 <img
                   src="./images/kalender.svg"
@@ -210,8 +271,9 @@
             </div>
           </div>
         </div>
+       
         <div class="bg-beige flex justify-center p-4 relative">
-          <img src="./images/husky.svg" class="w-56" alt="" />
+          <img src="./images/Dalmantia.svg" class="w-56" alt="" />
           <div
             class="absolute bg-white w-[300px] top-72 p-6 rounded-lg shadow-md"
           >
@@ -219,7 +281,7 @@
               Adprian
             </h1>
             <div class="flex justify-between items-center mb-4">
-              <h1 class="text-sm font-medium">Golden Retriever</h1>
+              <h1 class="text-sm font-medium">Delmatian</h1>
               <div class="flex items-center space-x-2">
                 <img
                   src="./images/kalender.svg"
@@ -243,41 +305,8 @@
             </div>
           </div>
         </div>
-        <div class="bg-beige flex justify-center p-4 relative">
-          <img src="./images/husky.svg" class="w-56" alt="" />
-          <div
-            class="absolute bg-white w-[300px] top-72 p-6 rounded-lg shadow-md"
-          >
-            <h1 class="text-center font-coiny text-red-500 text-3xl mb-6">
-              Adprian
-            </h1>
-            <div class="flex justify-between items-center mb-4">
-              <h1 class="text-sm font-medium">Golden Retriever</h1>
-              <div class="flex items-center space-x-2">
-                <img
-                  src="./images/kalender.svg"
-                  alt="Calendar"
-                  class="w-4 h-4"
-                />
-                <h1 class="text-sm font-medium">2006/04/05</h1>
-              </div>
-            </div>
-            <div class="flex justify-between items-center">
-              <div class="flex items-center space-x-1">
-                <img src="./images/star.svg" alt="Star" class="w-4 h-4" />
-                <img src="./images/star.svg" alt="Star" class="w-4 h-4" />
-                <img src="./images/star.svg" alt="Star" class="w-4 h-4" />
-                <img src="./images/star.svg" alt="Star" class="w-4 h-5" />
-                <img src="./images/star.svg" alt="Star" class="w-4 h-4" />
-              </div>
-              <h1 class="text-sm">
-                Total Price : <span class="text-black font-semibold">$30</span>
-              </h1>
-            </div>
-          </div>
-        </div>
-        <div class="bg-beige flex justify-center p-4 relative mt-28">
-          <img src="./images/husky.svg" class="w-56" alt="" />
+        <div class="bg-beige flex justify-center p-4 relative ">
+          <img src="./images/Golden.svg" class="w-56" alt="" />
           <div
             class="absolute bg-white w-[300px] top-72 p-6 rounded-lg shadow-md"
           >
@@ -310,7 +339,7 @@
           </div>
         </div>
         <div class="bg-beige flex justify-center p-4 relative mt-28">
-          <img src="./images/husky.svg" class="w-56" alt="" />
+          <img src="./images/Beagle.svg" class="w-56" alt="" />
           <div
             class="absolute bg-white w-[300px] top-72 p-6 rounded-lg shadow-md"
           >
@@ -318,7 +347,7 @@
               Adprian
             </h1>
             <div class="flex justify-between items-center mb-4">
-              <h1 class="text-sm font-medium">Golden Retriever</h1>
+              <h1 class="text-sm font-medium">Beagle</h1>
               <div class="flex items-center space-x-2">
                 <img
                   src="./images/kalender.svg"
@@ -343,7 +372,7 @@
           </div>
         </div>
         <div class="bg-beige flex justify-center p-4 relative mt-28">
-          <img src="./images/husky.svg" class="w-56" alt="" />
+          <img src="./images/Dachshund (2).svg" class="w-56" alt="" />
           <div
             class="absolute bg-white w-[300px] top-72 p-6 rounded-lg shadow-xl"
           >
@@ -351,7 +380,7 @@
               Adprian
             </h1>
             <div class="flex justify-between items-center mb-4">
-              <h1 class="text-sm font-medium">Golden Retriever</h1>
+              <h1 class="text-sm font-medium">Dachshund</h1>
               <div class="flex items-center space-x-2">
                 <img
                   src="./images/kalender.svg"
@@ -375,6 +404,41 @@
             </div>
           </div>
         </div>
+        <div class="bg-beige flex justify-center p-4 relative mt-28">
+          <img src="./images/Chihuahua.svg" class="w-56" alt="" />
+          <div
+            class="absolute bg-white w-[300px] top-72 p-6 rounded-lg shadow-xl"
+          >
+            <h1 class="text-center font-coiny text-red-500 text-3xl mb-6">
+              Adprian
+            </h1>
+            <div class="flex justify-between items-center mb-4">
+              <h1 class="text-sm font-medium">Chihuahua</h1>
+              <div class="flex items-center space-x-2">
+                <img
+                  src="./images/kalender.svg"
+                  alt="Calendar"
+                  class="w-4 h-4"
+                />
+                <h1 class="text-sm font-medium">2006/04/05</h1>
+              </div>
+            </div>
+            <div class="flex justify-between items-center">
+              <div class="flex items-center space-x-1">
+                <img src="./images/star.svg" alt="Star" class="w-4 h-4" />
+                <img src="./images/star.svg" alt="Star" class="w-4 h-4" />
+                <img src="./images/star.svg" alt="Star" class="w-4 h-4" />
+                <img src="./images/star.svg" alt="Star" class="w-4 h-5" />
+                <img src="./images/star.svg" alt="Star" class="w-4 h-4" />
+              </div>
+              <h1 class="text-sm">
+                Total Price : <span class="text-black font-semibold">$30</span>
+              </h1>
+            </div>
+          </div>
+        </div>
+        
+        
       </div>
     </section>
     <section class="section_faq mt-32 bg-[#D4E6EA]">
@@ -723,27 +787,27 @@
         </div>
       </div>
     </section>
-    <section class="mx-[90px] py-4 mt-28">
+    <section class="section_gallery mx-[90px] py-4 mt-28">
       <div class="max-w-6xl mx-auto py-12">
-        <div class="grid grid-cols-4 grid-rows-2 gap-4">
+        <div class="grid grid-cols-4 gap-4">
           <!-- Sisi Kiri -->
           <div class="col-span-2 grid grid-rows-1 gap-4">
             <!-- Dua gambar kecil horizontal -->
             <div class="grid grid-cols-2 gap-4">
               <img
-                src="./images/testimonial.svg"
+                src="./images/1 (2).jpg"
                 alt="Gallery Image 1"
                 class="w-full h-full object-cover"
               />
               <img
-                src="./images/testimonial.svg"
+                src="./images/2 (2).jpg"
                 alt="Gallery Image 2"
                 class="w-full h-full object-cover"
               />
             </div>
             <!-- Gambar besar di bawah -->
             <img
-              src="./images/testimonial.svg"
+              src="./images/5 (2).jpg"
               alt="Gallery Image 3"
               class="w-full h-full object-cover"
             />
@@ -753,19 +817,19 @@
           <div class="col-span-2 grid grid-rows-1 gap-4">
             <!-- Gambar besar di atas -->
             <img
-              src="./images/testimonial.svg"
+              src="./images/4 (2).jpg"
               alt="Gallery Image 4"
               class="w-full h-full object-cover"
             />
             <!-- Dua gambar kecil horizontal -->
             <div class="grid grid-cols-2 gap-4">
               <img
-                src="./images/testimonial.svg"
+                src="./images/3 (2).jpg"
                 alt="Gallery Image 5"
                 class="w-full h-full object-cover"
               />
               <img
-                src="./images/testimonial.svg"
+                src="./images/6.jpg"
                 alt="Gallery Image 6"
                 class="w-full h-full object-cover"
               />
@@ -773,6 +837,46 @@
           </div>
         </div>
       </div>
+    </section>
+    <section class="section_footer bg-biru">
+      <footer class="mx-[90px] py-4 mt-28">
+        <div class="grid grid-cols-12 gap-10 text-white">
+          <div class="col-span-4">
+            <img src="./images/Logo.svg" alt="" />
+            <p class="text-justify font-poppins">
+              Tailco adalah komunitas yang berdedikasi untuk menemukan rumah
+              penuh cinta bagi teman-teman berbulu kita. Di Tailco, kami percaya
+              bahwa setiap anjing layak mendapatkan kesempatan kedua untuk hidup
+              bahagia.
+            </p>
+          </div>
+          <div class="col-span-2">
+            <h1 class="text-merah font-coiny text-3xl">Navigation</h1>
+            <div class="flex flex-col">
+              <a href="">Home</a>
+              <a href="">About Us</a>
+              <a href="">Dog List</a>
+              <a href="">Blogs</a>
+              <a href="">Testimoni</a>
+            </div>
+          </div>
+          <div class="col-span-2">
+            <h1 class="text-merah font-coiny text-3xl">Informasi</h1>
+            <p>0895-8001-839-63</p>
+            <p>adprian@gmail.com</p>
+          </div>
+          <div class="col-span-4">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d262.42337073581405!2d115.20132927528054!3d-8.611008654126401!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1735472146037!5m2!1sid!2sid"
+              class="w-full"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </footer>
     </section>
 
     <script src="/node_modules/flowbite/dist/flowbite.min.js"></script>

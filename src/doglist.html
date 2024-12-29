@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+
+    <!-- link swipper js om swastiastu -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/node_modules/flowbite/dist/flowbite.min.css"
+    />
+    <title>Homepage</title>
+  </head>
+  <style>
+    .swiper-button-next {
+      border: 3px solid black;
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      top: 60px;
+      left: 70px;
+    }
+    .swiper-button-next::after {
+      font-size: 20px;
+      color: black;
+      font-weight: bolder;
+    }
+    .swiper-button-prev {
+      border: 3px solid black;
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      top: 60px;
+    }
+    .swiper-button-prev::after {
+      font-size: 20px;
+      font-size: 20px;
+      color: black;
+      font-weight: bold;
+    }
+    .gabungan {
+      position: absolute;
+    }
+  </style>
+  <body class="bg-[#F5F5F5]">
+    <section class="section_header relative">
+      <div class="absolute top-0 w-full z-10">
+        <img src="./images/awan_shape.svg" alt="Awan" class="w-full" />
+      </div>
+
+      <!-- Navbar untuk laptop -->
+      <nav
+        class="bg-white font-coiny px-4 py-4 relative z-20 hidden md:block md:px-[90px]"
+      >
+        <div class="flex items-center justify-between">
+          <!-- Logo -->
+          <div>
+            <a href="">
+              <img src="./images/Logo.svg" alt="Logo" class="w-32" />
+            </a>
+          </div>
+
+          <!-- Navigation Links -->
+          <div class="flex items-center space-x-5">
+            <a href="" class="hover:text-merah transition-all">Home</a>
+            <a href="" class="hover:text-merah transition-all">Dog List</a>
+            <a href="" class="hover:text-merah transition-all">Blogs</a>
+          </div>
+
+          <button class="bg-merah text-white px-3 py-2 rounded-lg">
+            <a href="#wa">Adopt Here</a>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Navbar untuk mobile dan tablet -->
+      <nav class="bg-white font-coiny px-4 py-4 relative z-20 md:hidden">
+        <div class="flex items-center justify-between">
+          <!-- Logo -->
+          <div>
+            <a href="">
+              <img src="./images/Logo.svg" alt="Logo" class="w-24" />
+            </a>
+          </div>
+
+          <!-- Hamburger Menu -->
+          <button
+            id="hamburger"
+            class="block md:hidden text-merah focus:outline-none"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Dropdown Menu -->
+        <div
+          id="mobile-menu"
+          class="hidden flex flex-col space-y-4 mt-4 text-center"
+        >
+          <a href="" class="hover:text-merah transition-all">Home</a>
+          <a href="" class="hover:text-merah transition-all">Dog List</a>
+          <a href="" class="hover:text-merah transition-all">Blogs</a>
+          <button class="bg-merah text-white px-3 py-2 rounded-lg">
+            <a href="#wa">Adopt Here</a>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Jumbotron -->
+      <div class="relative font-coiny" id="jumbotron">
+        <img src="./images/jumbotron.svg" alt="Jumbotron" class="w-full" />
+        <div
+          class="absolute top-[2rem] right-5 md:top-[10rem] md:right-10 text-white text-[24px] md:text-[45px]"
+        >
+          <h1>Hi Human.</h1>
+          <p class="mt-4">You Need <span class="text-merah">Friends</span> ?</p>
+        </div>
+      </div>
+    </section>
+    <section class="section_dogLists mx-[80px] py-4 mt-28">
+      <div class="flex justify-center">
+        <img src="./images/paw.svg" class="w-8 h-8" alt="" />
+      </div>
+      <div class="text-center">
+        <h1 class="font-coiny text-merah text-xl">Meet The Animal</h1>
+        <h1 class="font-coiny text-[#092025] text-3xl my-3">
+          Puppies Waiting for Adoption
+        </h1>
+        <p class="font-poppins text-slate-600">
+          Discover adorable pups who are eagerly waiting to bring endless love,
+          joy, and companionship into <br />
+          your life. Each one is full of unique personality and charm, ready to
+          be your loyal friend and make <br />
+          your house feel like a home.
+        </p>
+      </div>
+      <div class="grid grid-cols-3 mt-20 gap-5">
+        <div class="bg-beige flex justify-center p-4 relative">
+          <img src="./images/husky.svg" class="w-56" alt="" />
+          <div
+            class="absolute bg-white w-[300px] top-72 p-6 rounded-lg shadow-md"
+          >
+            <h1 class="text-center font-coiny text-red-500 text-3xl mb-6">
+              Adprian
+            </h1>
+            <div class="flex justify-between items-center mb-4">
+              <h1 class="text-sm font-medium">Siberian Husky</h1>
+              <div class="flex items-center space-x-2">
+                <img
+                  src="./images/kalender.svg"
+                  alt="Calendar"
+                  class="w-4 h-4"
+                />
+                <h1 class="text-sm font-medium">2006/04/05</h1>
+              </div>
+            </div>
+            <div class="flex justify-between items-center">
+              <div class="flex items-center space-x-1">
+                <img src="./images/star.svg" alt="Star" class="w-4 h-4" />
+                <img src="./images/star.svg" alt="Star" class="w-4 h-4" />
+                <img src="./images/star.svg" alt="Star" class="w-4 h-4" />
+                <img src="./images/star.svg" alt="Star" class="w-4 h-5" />
+                <img src="./images/star.svg" alt="Star" class="w-4 h-4" />
+              </div>
+              <h1 class="text-sm">
+                Total Price : <span class="text-black font-semibold">$30</span>
+              </h1>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-beige flex justify-center p-4 relative">
+          <img src="./images/Dalmantia.svg" class="w-56" alt="" />
+          <div
+            class="absolute bg-white w-[300px] top-72 p-6 rounded-lg shadow-md"
+          >
+            <h1 class="text-center font-coiny text-red-500 text-3xl mb-6">
+              Adprian
+            </h1>
+            <div class="flex justify-between items-center mb-4">
+              <h1 class="text-sm font-medium">Delmatian</h1>
+              <div class="flex items-center space-x-2">
+                <img
+                  src="./images/kalender.svg"
+                  alt="Calendar"
+                  class="w-4 h-4"
+                />
+                <h1 class="text-sm font-medium">2006/04/05</h1>
+              </div>
+            </div>
+            <div class="flex justify-between items-center">
+              <div class="flex items-center space-x-1">
+                <img src="./images/star.svg" alt="Star" class="w-4 h-4" />
+                <img src="./images/star.svg" alt="Star" class="w-4 h-4" />
+                <img src="./images/star.svg" alt="Star" class="w-4 h-4" />
+                <img src="./images/star.svg" alt="Star" class="w-4 h-5" />
+                <img src="./images/star.svg" alt="Star" class="w-4 h-4" />
+              </div>
+              <h1 class="text-sm">
+                Total Price : <span class="text-black font-semibold">$30</span>
+              </h1>
+            </div>
+          </div>
+        </div>
+        <div class="bg-beige flex justify-center p-4 relative">
+          <img src="./images/Golden.svg" class="w-56" alt="" />
+          <div
+            class="absolute bg-white w-[300px] top-72 p-6 rounded-lg shadow-md"
+          >
+            <h1 class="text-center font-coiny text-red-500 text-3xl mb-6">
+              Adprian
+            </h1>
+            <div class="flex justify-between items-center mb-4">
+              <h1 class="text-sm font-medium">Golden Retriever</h1>
+              <div class="flex items-center space-x-2">
+                <img
+                  src="./images/kalender.svg"
+                  alt="Calendar"
+                  class="w-4 h-4"
+                />
+                <h1 class="text-sm font-medium">2006/04/05</h1>
+              </div>
+            </div>
+            <div class="flex justify-between items-center">
+              <div class="flex items-center space-x-1">
+                <img src="./images/star.svg" alt="Star" class="w-4 h-4" />
+                <img src="./images/star.svg" alt="Star" class="w-4 h-4" />
+                <img src="./images/star.svg" alt="Star" class="w-4 h-4" />
+                <img src="./images/star.svg" alt="Star" class="w-4 h-5" />
+                <img src="./images/star.svg" alt="Star" class="w-4 h-4" />
+              </div>
+              <h1 class="text-sm">
+                Total Price : <span class="text-black font-semibold">$30</span>
+              </h1>
+            </div>
+          </div>
+        </div>
+        <div class="bg-beige flex justify-center p-4 relative mt-28">
+          <img src="./images/Beagle.svg" class="w-56" alt="" />
+          <div
+            class="absolute bg-white w-[300px] top-72 p-6 rounded-lg shadow-md"
+          >
+            <h1 class="text-center font-coiny text-red-500 text-3xl mb-6">
+              Adprian
+            </h1>
+            <div class="flex justify-between items-center mb-4">
+              <h1 class="text-sm font-medium">Beagle</h1>
+              <div class="flex items-center space-x-2">
+                <img
+                  src="./images/kalender.svg"
+                  alt="Calendar"
+                  class="w-4 h-4"
+                />
+                <h1 class="text-sm font-medium">2006/04/05</h1>
+              </div>
+            </div>
+            <div class="flex justify-between items-center">
+              <div class="flex items-center space-x-1">
+                <img src="./images/star.svg" alt="Star" class="w-4 h-4" />
+                <img src="./images/star.svg" alt="Star" class="w-4 h-4" />
+                <img src="./images/star.svg" alt="Star" class="w-4 h-4" />
+                <img src="./images/star.svg" alt="Star" class="w-4 h-5" />
+                <img src="./images/star.svg" alt="Star" class="w-4 h-4" />
+              </div>
+              <h1 class="text-sm">
+                Total Price : <span class="text-black font-semibold">$30</span>
+              </h1>
+            </div>
+          </div>
+        </div>
+        <div class="bg-beige flex justify-center p-4 relative mt-28">
+          <img src="./images/Dachshund (2).svg" class="w-56" alt="" />
+          <div
+            class="absolute bg-white w-[300px] top-72 p-6 rounded-lg shadow-xl"
+          >
+            <h1 class="text-center font-coiny text-red-500 text-3xl mb-6">
+              Adprian
+            </h1>
+            <div class="flex justify-between items-center mb-4">
+              <h1 class="text-sm font-medium">Dachshund</h1>
+              <div class="flex items-center space-x-2">
+                <img
+                  src="./images/kalender.svg"
+                  alt="Calendar"
+                  class="w-4 h-4"
+                />
+                <h1 class="text-sm font-medium">2006/04/05</h1>
+              </div>
+            </div>
+            <div class="flex justify-between items-center">
+              <div class="flex items-center space-x-1">
+                <img src="./images/star.svg" alt="Star" class="w-4 h-4" />
+                <img src="./images/star.svg" alt="Star" class="w-4 h-4" />
+                <img src="./images/star.svg" alt="Star" class="w-4 h-4" />
+                <img src="./images/star.svg" alt="Star" class="w-4 h-5" />
+                <img src="./images/star.svg" alt="Star" class="w-4 h-4" />
+              </div>
+              <h1 class="text-sm">
+                Total Price : <span class="text-black font-semibold">$30</span>
+              </h1>
+            </div>
+          </div>
+        </div>
+        <div class="bg-beige flex justify-center p-4 relative mt-28">
+          <img src="./images/Chihuahua.svg" class="w-56" alt="" />
+          <div
+            class="absolute bg-white w-[300px] top-72 p-6 rounded-lg shadow-xl"
+          >
+            <h1 class="text-center font-coiny text-red-500 text-3xl mb-6">
+              Adprian
+            </h1>
+            <div class="flex justify-between items-center mb-4">
+              <h1 class="text-sm font-medium">Chihuahua</h1>
+              <div class="flex items-center space-x-2">
+                <img
+                  src="./images/kalender.svg"
+                  alt="Calendar"
+                  class="w-4 h-4"
+                />
+                <h1 class="text-sm font-medium">2006/04/05</h1>
+              </div>
+            </div>
+            <div class="flex justify-between items-center">
+              <div class="flex items-center space-x-1">
+                <img src="./images/star.svg" alt="Star" class="w-4 h-4" />
+                <img src="./images/star.svg" alt="Star" class="w-4 h-4" />
+                <img src="./images/star.svg" alt="Star" class="w-4 h-4" />
+                <img src="./images/star.svg" alt="Star" class="w-4 h-5" />
+                <img src="./images/star.svg" alt="Star" class="w-4 h-4" />
+              </div>
+              <h1 class="text-sm">
+                Total Price : <span class="text-black font-semibold">$30</span>
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section_footer bg-biru">
+      <footer class="mx-[90px] py-4 mt-28">
+        <div class="grid grid-cols-12 gap-10 text-white">
+          <div class="col-span-4">
+            <img src="./images/Logo.svg" alt="" />
+            <p class="text-justify font-poppins">
+              Tailco adalah komunitas yang berdedikasi untuk menemukan rumah
+              penuh cinta bagi teman-teman berbulu kita. Di Tailco, kami percaya
+              bahwa setiap anjing layak mendapatkan kesempatan kedua untuk hidup
+              bahagia.
+            </p>
+          </div>
+          <div class="col-span-2">
+            <h1 class="text-merah font-coiny text-3xl">Navigation</h1>
+            <div class="flex flex-col">
+              <a href="">Home</a>
+              <a href="">About Us</a>
+              <a href="">Dog List</a>
+              <a href="">Blogs</a>
+              <a href="">Testimoni</a>
+            </div>
+          </div>
+          <div class="col-span-2">
+            <h1 class="text-merah font-coiny text-3xl">Informasi</h1>
+            <p>0895-8001-839-63</p>
+            <p>adprian@gmail.com</p>
+          </div>
+          <div class="col-span-4">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d262.42337073581405!2d115.20132927528054!3d-8.611008654126401!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1735472146037!5m2!1sid!2sid"
+              class="w-full"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </footer>
+    </section>
+
+    <script src="/node_modules/flowbite/dist/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
