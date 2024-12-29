@@ -1,13 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,js}"],
+  content: [
+    "./src/**/*.{html,js}",
+    "./node_modules/flowbite/**/*.js" 
+  ],
   theme: {
     extend: {
       colors:{
         merah: "#FF2929",
-        biru: "2B2A4C",
+        biru: "#2B2A4C",
         kuning: "#FFB200",
-        beige: "#FCD9AC"
+        beige: "#EAE8E1"
       },
       fontFamily: {
         'poppins': 'Poppins',
@@ -16,5 +19,7 @@ module.exports = {
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require('flowbite/plugin')
+]
 }
